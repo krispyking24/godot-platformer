@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://cajlndfnnwbwb"]
+
+[ext_resource type="Script" path="res://input hud-run.gd" id="2_lxgh6"]
+[ext_resource type="Script" path="res://input hud-jump.gd" id="3_r64vv"]
+[ext_resource type="Script" path="res://fps counter.gd" id="3_w8p0b"]
+[ext_resource type="Texture2D" uid="uid://ixn6kvsdvh4i" path="res://run normal.png" id="4_ettxs"]
+[ext_resource type="Texture2D" uid="uid://bwhd3g10e3av7" path="res://space normal.png" id="5_gtqha"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="death counter" type="Label" parent="."]
+offset_right = 64.0
+offset_bottom = 26.0
+text = "Deaths: 0"
+
+[node name="fps counter" type="Label" parent="."]
+offset_top = 20.0
+offset_right = 41.0
+offset_bottom = 46.0
+text = "fps:"
+script = ExtResource("3_w8p0b")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -11.5
+offset_right = 21.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "input"
+horizontal_alignment = 2
+
+[node name="input hud-jump" type="Sprite2D" parent="."]
+position = Vector2(1122, 600)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_gtqha")
+script = ExtResource("3_r64vv")
+
+[node name="input hud-run" type="Sprite2D" parent="."]
+position = Vector2(1244, 773)
+texture = ExtResource("4_ettxs")
+script = ExtResource("2_lxgh6")

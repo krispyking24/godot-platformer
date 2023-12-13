@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct2sdttyhq5ws"]
+
+[ext_resource type="Script" path="res://movement.gd" id="1_50s12"]
+[ext_resource type="Texture2D" uid="uid://u6l1j02yubp3" path="res://icon.png" id="2_7d4xp"]
+[ext_resource type="Script" path="res://zoom.gd" id="3_gyvsl"]
+[ext_resource type="PackedScene" uid="uid://cajlndfnnwbwb" path="res://hud.tscn" id="4_wo05k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5umlv"]
+radius = 5.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+disable_mode = 2
+script = ExtResource("1_50s12")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.718749, -0.25)
+scale = Vector2(0.0269004, 0.0201875)
+texture = ExtResource("2_7d4xp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5umlv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_horizontal_offset = 1.0
+drag_vertical_offset = 1.0
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
+script = ExtResource("3_gyvsl")
+
+[node name="HUD" parent="Camera2D" instance=ExtResource("4_wo05k")]
