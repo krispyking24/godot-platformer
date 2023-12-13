@@ -1,0 +1,6 @@
+jump is w and the up arrow key and the space bar
+right is d and the right arrow key
+left is a and the left arrow key
+move down faster is s and the down arrow key
+restart level is r
+sprint is shift
